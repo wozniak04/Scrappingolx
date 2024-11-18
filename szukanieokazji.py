@@ -8,7 +8,6 @@ okazyjneceny = {
     "iphonexsmax": 600,
     "iphone11": 600,
     "iphone11pro": 700,
-
     "iphone12mini": 700,
     "iphone12": 900,
     "iphone12pro": 1100,
@@ -37,7 +36,8 @@ def okazje(telefony):
             if okazyjneceny[i["nazwa"]] > i["cena"]:
                 dobreceny.append(i)
         except:
-            print(f"chuj wie co przyjrzyj sie {i}")
+            pass
+            #print(f"cos nie tak {i}")
 
     return dobreceny
 

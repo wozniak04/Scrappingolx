@@ -18,13 +18,14 @@ def gettelefony(driver):
             cena.replace(",",".")
             cena=float(cena)
         except:
-            print(cenastr.text)
+            pass
+            #print(cenastr.text)
         nazwa=re.findall(pattern, nazwastr.text, re.IGNORECASE)
         index=nazwastr.text.lower().find("gb")
         pamiec= "" if index==-1 else nazwastr.text[index-3:index].replace(" ","")
 
         try:
-            nazwacala = f"iphone {'x' if nazwa[0][0] == 10 else nazwa[0][0]} {nazwa[0][1]} {nazwa[0][2]} {nazwa[0][3]}"
+            nazwacala = f"iphone {'x' if nazwa[0][0] == '10' else nazwa[0][0]} {nazwa[0][1]} {nazwa[0][2]} {nazwa[0][3]}"
             telefony.append({
                 "nazwa": nazwacala.lower().replace(" ",""),
                 "cena": cena,
@@ -37,7 +38,7 @@ def gettelefony(driver):
 
         except:
             nazwacala=nazwastr.text
-            print(f"zła nazwa nie przeszła regex{nazwacala}, {cena}, {link}")
+            #print(f"zła nazwa nie przeszła regex{nazwacala}, {cena}, {link}")
 
     return telefony
 
