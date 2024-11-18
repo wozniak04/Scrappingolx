@@ -8,7 +8,7 @@ okazyjneceny = {
     "iphonexsmax": 600,
     "iphone11": 600,
     "iphone11pro": 700,
-    "iphone11promax":1000, #cena nie zatwierdzona
+
     "iphone12mini": 700,
     "iphone12": 900,
     "iphone12pro": 1100,
@@ -25,7 +25,7 @@ okazyjneceny = {
     "iphone15pro": 3500,
     "iphone15promax": 4000,
     "iphone15plus": 3000,
-    #iphony 16 dodaj
+
 }
 
 

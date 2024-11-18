@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 import re
 
-pattern = r"\b(x|xs|xr|10|1[1-6])\b(\s+pro)?(\s+mini)?(\s+max)?\b"
+pattern = r"\b(x|xs|xr|10|1[1-5])\b(\s+pro)?(\s+mini)?(\s+max)?\b"
 telefony=[]
 
 
@@ -11,13 +11,15 @@ def gettelefony(driver):
     for i in el:
         cenastr=i.find_element(By.CLASS_NAME,"css-13afqrm")
         link=i.find_element(By.TAG_NAME,"a").get_attribute("href")
-        nazwastr=i.find_element(By.CLASS_NAME,"css-1wxaaza")
+        nazwastr=i.find_element(By.CLASS_NAME,"css-1s3qyje")
         lokalizacja=i.find_element(By.CLASS_NAME,"css-1mwdrlh").text
-
-        cena=''.join(filter(str.isdigit, cenastr.text))
-        cena=float(cena)
+        try:
+            cena=''.join(filter(str.isdigit, cenastr.text))
+            cena.replace(",",".")
+            cena=float(cena)
+        except:
+            print(cenastr.text)
         nazwa=re.findall(pattern, nazwastr.text, re.IGNORECASE)
-        nazwacala=""
         index=nazwastr.text.lower().find("gb")
         pamiec= "" if index==-1 else nazwastr.text[index-3:index].replace(" ","")
 
