@@ -14,7 +14,7 @@ while nr_zakladki<=liczba_zakladek:
 
     wynik=przechodzenie(driver,zakladka,nr_zakladki,liczba_zakladek)
     liczba_zakladek=wynik[0]
-    dobreceny.extend(wynik[1]) #duplikuje elementy
+    dobreceny.extend(wynik[1])
     zakladka=wynik[2]
     nr_zakladki+=1
     if nr_zakladki==(liczba_zakladek+1):
