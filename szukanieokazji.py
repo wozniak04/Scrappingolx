@@ -1,4 +1,4 @@
-
+from dzialanienapliku import dodawanielinku
 
 
 okazyjneceny = {
@@ -35,6 +35,7 @@ def okazje(telefony):
         try:
             if okazyjneceny[i["nazwa"]] > i["cena"]:
                 dobreceny.append(i)
+                dodawanielinku(i["link"])
         except:
             pass
             #print(f"cos nie tak {i}")
