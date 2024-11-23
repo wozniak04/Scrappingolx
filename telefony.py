@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 import re
 from dzialanienapliku import sprawdzlink
 
-pattern = r"\b(x|xs|xr|10|1[1-5])\b(\s+pro)?(\s+mini)?(\s+max)?\b"
+pattern = r"(x|xs|xr|10|1[1-5])(pro)?(mini)?(max)?"
 
 
 
@@ -22,7 +22,7 @@ def gettelefony(driver):
         except:
             pass
             #print(cenastr.text)
-        nazwa=re.findall(pattern, nazwastr.text, re.IGNORECASE)
+        nazwa=re.findall(pattern, nazwastr.text.replace(" ",""), re.IGNORECASE)
         index=nazwastr.text.lower().find("gb")
         pamiec= "" if index==-1 else nazwastr.text[index-3:index].replace(" ","")
 

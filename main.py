@@ -1,8 +1,13 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from przejscie_po_zakladkach import przechodzenie
 
-driver = webdriver.Chrome()
+service = Service(ChromeDriverManager().install())
+
+
+driver = webdriver.Chrome(service=service)
 driver.get("https://www.olx.pl/elektronika/telefony/smartfony-telefony-komorkowe/iphone/q-iphone")
 
 zakladka=driver.find_element(By.CLASS_NAME,"css-4mw0p4").find_elements(By.TAG_NAME,"a")
