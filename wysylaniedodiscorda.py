@@ -29,7 +29,7 @@ async def send_phone(telefony):
         #     print("Bot nie ma wystarczających uprawnień do dostępu do kanału.")
         # except discord.HTTPException as e:
         #     print(f"Nie udało się wysłać wiadomości: {e}")
+    client.run(Token)
 
 
 
-client.run(Token)
