@@ -18,16 +18,16 @@ async def przechodzenie(driver,zakladka,nr_zakladki,liczba_zakladek):
 
     if nr_zakladki == liczba_zakladek:
         driver.get("https://www.olx.pl/elektronika/telefony/smartfony-telefony-komorkowe/iphone/q-iphone/")
-        await sleep(randint(5,40))
+        await sleep(randint(10,20))
         zakladka = driver.find_element(By.CLASS_NAME, "css-4mw0p4").find_elements(By.TAG_NAME, 'a')
         liczba_zakladek = int(zakladka[3].text)
-        await sleep(randint(20, 240))
+        await sleep(randint(200, 2400))
 
     else:
         if nr_zakladki in range(2, 4) or nr_zakladki in range((liczba_zakladek - 2), liczba_zakladek):
             print(f"zakladka if kliknieta ")
             zakladka[5].click()
-            await sleep(3)
+            await sleep(randint(10,20))
             zakladka = driver.find_element(By.CLASS_NAME, "css-4mw0p4").find_elements(By.TAG_NAME, 'a')
             try:
                 liczba_zakladek = int(zakladka[4].text)
@@ -36,12 +36,12 @@ async def przechodzenie(driver,zakladka,nr_zakladki,liczba_zakladek):
         else:
             zakladka[4].click()
             print(f"zakladka else kliknieta ")
-            await sleep(3)
+            await sleep(randint(10,20))
             zakladka = driver.find_element(By.CLASS_NAME, "css-4mw0p4").find_elements(By.TAG_NAME, 'a')
             if nr_zakladki != 1:
                 liczba_zakladek = int(zakladka[3].text)
             else:
                 liczba_zakladek = int(zakladka[4].text)
 
-            await sleep(randint(1, 7))
+            await sleep(randint(10, 240))
     return liczba_zakladek,dobreceny,zakladka
