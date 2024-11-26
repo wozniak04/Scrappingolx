@@ -30,7 +30,7 @@ def gettelefony(driver):
             if sprawdzlink(link)!=1:
                 nazwacala = f"iphone {'x' if nazwa[0][0] == '10' else nazwa[0][0]} {nazwa[0][1]} {nazwa[0][2]} {nazwa[0][3]}"
                 telefony.append({
-                    "nazwa": nazwacala.lower().replace(" ",""),
+                    "nazwa": nazwacala.lower(),
                     "cena": cena,
                     "pamiec": pamiec,
                     "lokalizacja": lokalizacja,

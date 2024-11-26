@@ -33,7 +33,7 @@ def okazje(telefony):
 
     for i in telefony:
         try:
-            if okazyjneceny[i["nazwa"]] > i["cena"]:
+            if okazyjneceny[i["nazwa"].replace(" ","")] > i["cena"]:
                 dobreceny.append(i)
                 dodawanielinku(i["link"])
         except:
