@@ -30,7 +30,7 @@ okazyjneceny = {
 
 def okazje(telefony):
     dobreceny = []
-
+    #pętla która sprawdza czy telefony znalezione sa w okazyjnej cenie
     for i in telefony:
         try:
             if okazyjneceny[i["nazwa"].replace(" ","")] > i["cena"]:
